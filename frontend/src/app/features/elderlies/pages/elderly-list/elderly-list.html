@@ -1,0 +1,103 @@
+<section class="app-container elderly-list">
+  <header class="elderly-list__header">
+    <h1>{{ 'ELDERLY.LIST_TITLE' | translate }}</h1>
+    <button mat-raised-button color="primary" routerLink="/elderlies/new">
+      <mat-icon>add</mat-icon>
+      {{ 'BUTTON.NEW_ELDERLY' | translate }}
+    </button>
+  </header>
+
+  @if (loading()) {
+    <div class="state state--loading">
+      <mat-progress-spinner mode="indeterminate" diameter="48" />
+      <p>{{ 'COMMON.LOADING' | translate }}</p>
+    </div>
+  } @else if (errorMessage()) {
+    <div class="state state--error">
+      <mat-icon>error_outline</mat-icon>
+      <p>{{ errorMessage() }}</p>
+      <button mat-flat-button color="primary" (click)="loadElderly()">{{ 'BUTTON.TRY_AGAIN' | translate }}</button>
+    </div>
+  } @else if (isEmpty()) {
+    <div class="state state--empty">
+      <mat-icon>info_outline</mat-icon>
+      <p>{{ 'ELDERLY.LIST_EMPTY' | translate }}</p>
+    </div>
+  } @else {
+    <div class="table-scroll">
+      <table mat-table [dataSource]="elderly()" class="mat-elevation-z1 elderly-table">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>{{ 'TABLE.ID' | translate }}</th>
+        <td mat-cell *matCellDef="let item">{{ item.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>{{ 'TABLE.ELDERLY_NAME' | translate }}</th>
+        <td mat-cell *matCellDef="let item">{{ item.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef>{{ 'TABLE.ELDERLY_AGE' | translate }}</th>
+        <td mat-cell *matCellDef="let item">{{ item.age }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="mobilityLevel">
+        <th mat-header-cell *matHeaderCellDef>{{ 'TABLE.ELDERLY_MOBILITY_LEVEL' | translate }}</th>
+        <td mat-cell *matCellDef="let item">{{ item.mobilityLevel }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="notes">
+        <th mat-header-cell *matHeaderCellDef>{{ 'TABLE.ELDERLY_NOTES' | translate }}</th>
+        <td mat-cell *matCellDef="let item">{{ item.notes || '—' }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>{{ 'TABLE.ACTIONS' | translate }}</th>
+        <td mat-cell *matCellDef="let item">
+          <button mat-icon-button color="primary" (click)="editElderly(item)" [attr.aria-label]="'BUTTON.EDIT' | translate">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteElderly(item)" [attr.aria-label]="'BUTTON.DELETE' | translate">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
+    <div class="mobile-card-list">
+      @for (item of elderly(); track item.id) {
+        <mat-card class="mobile-record-card">
+          <mat-card-content>
+            <div class="mobile-record-card__header">
+              <div>
+                <span class="mobile-record-card__eyebrow">{{ 'TABLE.ID' | translate }} {{ item.id }}</span>
+                <h2>{{ item.name }}</h2>
+              </div>
+              <div class="mobile-record-card__actions">
+                <button mat-icon-button color="primary" (click)="editElderly(item)" [attr.aria-label]="'BUTTON.EDIT' | translate">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="deleteElderly(item)" [attr.aria-label]="'BUTTON.DELETE' | translate">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </div>
+            <dl class="mobile-record-card__details">
+              <div><dt>{{ 'TABLE.ELDERLY_AGE' | translate }}</dt><dd>{{ item.age }}</dd></div>
+              <div><dt>{{ 'TABLE.ELDERLY_MOBILITY_LEVEL' | translate }}</dt><dd>{{ item.mobilityLevel }}</dd></div>
+              <div><dt>{{ 'TABLE.ELDERLY_NOTES' | translate }}</dt><dd>{{ item.notes || '—' }}</dd></div>
+            </dl>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+
+    <button class="mobile-fab" mat-fab color="primary" routerLink="/elderlies/new" [attr.aria-label]="'BUTTON.NEW_ELDERLY' | translate">
+      <mat-icon>add</mat-icon>
+    </button>
+  }
+</section>

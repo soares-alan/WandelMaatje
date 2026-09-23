@@ -1,0 +1,74 @@
+<h2 mat-dialog-title>{{ (isEditMode ? 'WALK.DIALOG_EDIT_TITLE' : 'WALK.DIALOG_CREATE_TITLE') | translate }}</h2>
+
+<mat-dialog-content>
+  @if (loadingOptions()) {
+    <div class="walk-form-dialog__loading">
+      <mat-progress-spinner mode="indeterminate" diameter="40" />
+    </div>
+  } @else {
+    <form class="walk-form" [formGroup]="form" (ngSubmit)="submit()">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'FORM.WALK_ELDERLY' | translate }}</mat-label>
+        <mat-select formControlName="elderlyId" required appAutofocus>
+          @for (item of elderlyOptions(); track item.id) {
+            <mat-option [value]="item.id">{{ item.name }}</mat-option>
+          }
+        </mat-select>
+        <app-form-error [control]="form.controls.elderlyId" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'FORM.WALK_VOLUNTEER' | translate }}</mat-label>
+        <mat-select formControlName="volunteerId" required>
+          @for (item of volunteerOptions(); track item.id) {
+            <mat-option [value]="item.id">{{ item.name }}</mat-option>
+          }
+        </mat-select>
+        <app-form-error [control]="form.controls.volunteerId" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'FORM.WALK_DATE' | translate }}</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="walkDate" required />
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <app-form-error [control]="form.controls.walkDate" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'FORM.WALK_DURATION' | translate }}</mat-label>
+        <input matInput type="number" formControlName="durationMinutes" required min="15" max="300" />
+        <app-form-error [control]="form.controls.durationMinutes" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'FORM.WALK_DISTANCE' | translate }}</mat-label>
+        <input matInput type="number" step="0.1" formControlName="distanceKm" required min="0.1" />
+        <app-form-error [control]="form.controls.distanceKm" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'FORM.WALK_PAIN_MOOD' | translate }}</mat-label>
+        <mat-select formControlName="painMood" required>
+          @for (option of painMoodOptions; track option.value) {
+            <mat-option [value]="option.value">{{ option.labelKey | translate }}</mat-option>
+          }
+        </mat-select>
+        <app-form-error [control]="form.controls.painMood" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'FORM.WALK_NOTES' | translate }}</mat-label>
+        <textarea matInput formControlName="notes" rows="3" maxlength="500"></textarea>
+        <app-form-error [control]="form.controls.notes" />
+      </mat-form-field>
+    </form>
+  }
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button type="button" (click)="cancel()">{{ 'BUTTON.CANCEL' | translate }}</button>
+  <button mat-raised-button color="primary" type="submit" [disabled]="loadingOptions() || form.invalid">
+    {{ 'BUTTON.SAVE' | translate }}
+  </button>
+</mat-dialog-actions>

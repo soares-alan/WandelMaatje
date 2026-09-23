@@ -1,0 +1,1 @@
+export type MobilityLevel = 'LOW' | 'MEDIUM' | 'HIGH';

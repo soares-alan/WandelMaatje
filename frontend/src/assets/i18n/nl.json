@@ -1,0 +1,142 @@
+{
+  "MENU": {
+    "HOME": "Home",
+    "ELDERLIES": "Ouderen",
+    "VOLUNTEERS": "Vrijwilligers",
+    "WALKS": "Wandelingen",
+    "LANGUAGE": "Taal"
+  },
+  "COMMON": {
+    "LOADING": "Laden...",
+    "ID": "ID",
+    "ACTIONS": "Acties"
+  },
+  "HOME": {
+    "TITLE": "Dashboard",
+    "SUMMARY_ELDERLIES": "Ouderen",
+    "SUMMARY_VOLUNTEERS": "Vrijwilligers",
+    "SUMMARY_WALKS": "Wandelingen",
+    "RECENT_WALKS_TITLE": "Recente wandelingen",
+    "RECENT_WALKS_EMPTY": "Er zijn nog geen wandelingen geregistreerd.",
+    "STATUS_DONE": "Voltooid",
+    "STATUS_SCHEDULED": "Gepland",
+    "QUICK_ACCESS_TITLE": "Snelle toegang",
+    "ERROR": "Het is niet gelukt om de dashboardgegevens te laden. Probeer het later opnieuw."
+  },
+  "ELDERLY": {
+    "LIST_TITLE": "Geregistreerde ouderen",
+    "LIST_EMPTY": "Er zijn nog geen ouderen geregistreerd.",
+    "LIST_ERROR": "Het is niet gelukt om de lijst met ouderen te laden. Probeer het later opnieuw.",
+    "CREATE_TITLE": "Nieuwe oudere",
+    "EDIT_TITLE": "Oudere bewerken",
+    "EDIT_LOAD_ERROR": "Het is niet gelukt om de gegevens van de oudere te laden."
+  },
+  "VOLUNTEER": {
+    "LIST_TITLE": "Geregistreerde vrijwilligers",
+    "LIST_EMPTY": "Er zijn nog geen vrijwilligers geregistreerd.",
+    "LIST_ERROR": "Het is niet gelukt om de lijst met vrijwilligers te laden. Probeer het later opnieuw.",
+    "CREATE_TITLE": "Nieuwe vrijwilliger",
+    "EDIT_TITLE": "Vrijwilliger bewerken",
+    "EDIT_LOAD_ERROR": "Het is niet gelukt om de gegevens van de vrijwilliger te laden."
+  },
+  "WALK": {
+    "LIST_TITLE": "Wandelingen",
+    "LIST_EMPTY": "Er zijn nog geen wandelingen geregistreerd.",
+    "LIST_ERROR": "Het is niet gelukt om de lijst met wandelingen te laden. Probeer het later opnieuw.",
+    "DIALOG_CREATE_TITLE": "Nieuwe wandeling",
+    "DIALOG_EDIT_TITLE": "Wandeling bewerken"
+  },
+  "FORM": {
+    "ELDERLY_NAME": "Naam",
+    "ELDERLY_AGE": "Leeftijd",
+    "ELDERLY_MOBILITY_LEVEL": "Mobiliteitsniveau",
+    "ELDERLY_MOBILITY_LOW": "Laag",
+    "ELDERLY_MOBILITY_MEDIUM": "Gemiddeld",
+    "ELDERLY_MOBILITY_HIGH": "Hoog",
+    "ELDERLY_NOTES": "Notities",
+    "VOLUNTEER_NAME": "Naam",
+    "WALK_ELDERLY": "Oudere",
+    "WALK_VOLUNTEER": "Vrijwilliger",
+    "WALK_DATE": "Datum van de wandeling",
+    "WALK_DURATION": "Duur (minuten)",
+    "WALK_DISTANCE": "Afstand (km)",
+    "WALK_PAIN_MOOD": "Pijn / stemming",
+    "WALK_PAIN_MOOD_1": "1 - Erg slecht",
+    "WALK_PAIN_MOOD_2": "2 - Slecht",
+    "WALK_PAIN_MOOD_3": "3 - Normaal",
+    "WALK_PAIN_MOOD_4": "4 - Goed",
+    "WALK_PAIN_MOOD_5": "5 - Erg goed",
+    "WALK_NOTES": "Notities"
+  },
+  "VALIDATION": {
+    "REQUIRED": "Verplicht veld",
+    "EMAIL": "Ongeldig e-mailadres",
+    "MIN": "Minimumwaarde niet toegestaan",
+    "MAX": "Maximumwaarde overschreden",
+    "MIN_LENGTH": "Minimale lengte van {{requiredLength}} tekens niet bereikt",
+    "MAX_LENGTH": "Maximale lengte van {{requiredLength}} tekens overschreden"
+  },
+  "errors": {
+    "badRequest": "Ongeldige gegevens. Controleer de ingevulde informatie.",
+    "unauthorized": "U bent niet geautoriseerd.",
+    "forbidden": "Toegang geweigerd.",
+    "notFound": "Record niet gevonden.",
+    "conflict": "Gegevensconflict.",
+    "serverError": "Interne serverfout.",
+    "connectionError": "Kan geen verbinding maken met de server.",
+    "unexpected": "Er is een onverwachte fout opgetreden."
+  },
+  "TABLE": {
+    "ID": "ID",
+    "ELDERLY_NAME": "Naam",
+    "ELDERLY_AGE": "Leeftijd",
+    "ELDERLY_MOBILITY_LEVEL": "Mobiliteit",
+    "ELDERLY_NOTES": "Notities",
+    "VOLUNTEER_NAME": "Naam",
+    "WALK_ELDERLY": "Oudere",
+    "WALK_VOLUNTEER": "Vrijwilliger",
+    "WALK_DATE": "Datum",
+    "WALK_DURATION": "Duur",
+    "WALK_PAIN_MOOD": "Pijn / stemming",
+    "WALK_STATUS": "Status",
+    "ACTIONS": "Acties"
+  },
+  "BUTTON": {
+    "NEW_ELDERLY": "Nieuwe oudere",
+    "NEW_VOLUNTEER": "Nieuwe vrijwilliger",
+    "NEW_WALK": "Nieuwe wandeling",
+    "SAVE": "Opslaan",
+    "SAVING": "Opslaan...",
+    "CANCEL": "Annuleren",
+    "DELETE": "Verwijderen",
+    "EDIT": "Bewerken",
+    "TRY_AGAIN": "Opnieuw proberen"
+  },
+  "MESSAGE": {
+    "CLOSE": "Sluiten",
+    "ELDERLY_DELETE_TITLE": "Oudere verwijderen",
+    "ELDERLY_DELETE_CONFIRM": "Weet u zeker dat u \"{{name}}\" wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+    "ELDERLY_DELETE_SUCCESS": "Oudere succesvol verwijderd.",
+    "ELDERLY_DELETE_ERROR": "Het is niet gelukt om de oudere te verwijderen.",
+    "ELDERLY_CREATE_SUCCESS": "Oudere succesvol geregistreerd.",
+    "ELDERLY_CREATE_ERROR": "Het is niet gelukt om de oudere te registreren.",
+    "ELDERLY_UPDATE_SUCCESS": "Oudere succesvol bijgewerkt.",
+    "ELDERLY_UPDATE_ERROR": "Het is niet gelukt om de oudere bij te werken.",
+    "VOLUNTEER_DELETE_TITLE": "Vrijwilliger verwijderen",
+    "VOLUNTEER_DELETE_CONFIRM": "Weet u zeker dat u \"{{name}}\" wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+    "VOLUNTEER_DELETE_SUCCESS": "Vrijwilliger succesvol verwijderd.",
+    "VOLUNTEER_DELETE_ERROR": "Het is niet gelukt om de vrijwilliger te verwijderen.",
+    "VOLUNTEER_CREATE_SUCCESS": "Vrijwilliger succesvol geregistreerd.",
+    "VOLUNTEER_CREATE_ERROR": "Het is niet gelukt om de vrijwilliger te registreren.",
+    "VOLUNTEER_UPDATE_SUCCESS": "Vrijwilliger succesvol bijgewerkt.",
+    "VOLUNTEER_UPDATE_ERROR": "Het is niet gelukt om de vrijwilliger bij te werken.",
+    "WALK_DELETE_TITLE": "Wandeling verwijderen",
+    "WALK_DELETE_CONFIRM": "Weet u zeker dat u de wandeling van \"{{elderly}}\" met \"{{volunteer}}\" wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+    "WALK_DELETE_SUCCESS": "Wandeling succesvol verwijderd.",
+    "WALK_DELETE_ERROR": "Het is niet gelukt om de wandeling te verwijderen.",
+    "WALK_CREATE_SUCCESS": "Wandeling succesvol geregistreerd.",
+    "WALK_CREATE_ERROR": "Het is niet gelukt om de wandeling te registreren.",
+    "WALK_UPDATE_SUCCESS": "Wandeling succesvol bijgewerkt.",
+    "WALK_UPDATE_ERROR": "Het is niet gelukt om de wandeling bij te werken."
+  }
+}

@@ -1,0 +1,11 @@
+<section class="app-container elderly-edit">
+  <h1>{{ 'ELDERLY.EDIT_TITLE' | translate }}</h1>
+
+  @if (loading()) {
+    <mat-progress-spinner mode="indeterminate" diameter="48" />
+  } @else if (errorMessage()) {
+    <p>{{ errorMessage() }}</p>
+  } @else {
+    <app-elderly-form [initialValue]="elderly()" [saving]="saving()" (formSubmit)="save($event)" />
+  }
+</section>
