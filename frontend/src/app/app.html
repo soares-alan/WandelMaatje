@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  <span>{{ title }}</span>
+  <span class="app-toolbar__spacer"></span>
+  <nav class="app-toolbar__navigation" aria-label="Primary navigation">
+    <button mat-button routerLink="/">{{ 'MENU.HOME' | translate }}</button>
+    <button mat-button routerLink="/elderlies">{{ 'MENU.ELDERLIES' | translate }}</button>
+    <button mat-button routerLink="/volunteers">{{ 'MENU.VOLUNTEERS' | translate }}</button>
+    <button mat-button routerLink="/walks">{{ 'MENU.WALKS' | translate }}</button>
+  </nav>
+
+  <button class="app-toolbar__mobile-menu" mat-icon-button [matMenuTriggerFor]="navigationMenu" aria-label="Open navigation">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #navigationMenu="matMenu">
+    <button mat-menu-item routerLink="/">{{ 'MENU.HOME' | translate }}</button>
+    <button mat-menu-item routerLink="/elderlies">{{ 'MENU.ELDERLIES' | translate }}</button>
+    <button mat-menu-item routerLink="/volunteers">{{ 'MENU.VOLUNTEERS' | translate }}</button>
+    <button mat-menu-item routerLink="/walks">{{ 'MENU.WALKS' | translate }}</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="languageMenu" aria-label="Language selector">
+    <mat-icon>language</mat-icon>
+    {{ 'MENU.LANGUAGE' | translate }}
+  </button>
+  <mat-menu #languageMenu="matMenu">
+    @for (language of languages; track language.code) {
+      <button mat-menu-item (click)="changeLanguage(language.code)" [disabled]="language.code === currentLanguage">
+        <span>{{ language.flag }} {{ language.label }}</span>
+      </button>
+    }
+  </mat-menu>
+</mat-toolbar>
+
+<router-outlet />

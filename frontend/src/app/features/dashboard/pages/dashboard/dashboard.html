@@ -1,0 +1,111 @@
+<section class="app-container dashboard">
+  <h1>{{ 'HOME.TITLE' | translate }}</h1>
+
+  @if (loading()) {
+    <div class="state state--loading">
+      <mat-progress-spinner mode="indeterminate" diameter="48" />
+      <p>{{ 'COMMON.LOADING' | translate }}</p>
+    </div>
+  } @else if (errorMessage()) {
+    <div class="state state--error">
+      <mat-icon>error_outline</mat-icon>
+      <p>{{ errorMessage() }}</p>
+      <button mat-flat-button color="primary" (click)="loadDashboard()">{{ 'BUTTON.TRY_AGAIN' | translate }}</button>
+    </div>
+  } @else {
+    <div class="summary-cards">
+      @for (card of summaryCards(); track card.titleKey) {
+        <mat-card class="summary-card" [ngClass]="card.colorClass">
+          <mat-card-content>
+            <mat-icon class="summary-card__icon">{{ card.icon }}</mat-icon>
+            <div class="summary-card__info">
+              <span class="summary-card__count">{{ card.count }}</span>
+              <span class="summary-card__title">{{ card.titleKey | translate }}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+
+    <section class="dashboard-section">
+      <h2>{{ 'HOME.RECENT_WALKS_TITLE' | translate }}</h2>
+
+      @if (isRecentWalksEmpty()) {
+        <div class="state state--empty">
+          <mat-icon>info_outline</mat-icon>
+          <p>{{ 'HOME.RECENT_WALKS_EMPTY' | translate }}</p>
+        </div>
+      } @else {
+        <div class="table-scroll">
+          <table mat-table [dataSource]="recentWalks()" class="mat-elevation-z1 recent-walks-table">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>{{ 'TABLE.ID' | translate }}</th>
+            <td mat-cell *matCellDef="let item">{{ item.id }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="elderly">
+            <th mat-header-cell *matHeaderCellDef>{{ 'TABLE.WALK_ELDERLY' | translate }}</th>
+            <td mat-cell *matCellDef="let item">{{ item.elderly.name }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="volunteer">
+            <th mat-header-cell *matHeaderCellDef>{{ 'TABLE.WALK_VOLUNTEER' | translate }}</th>
+            <td mat-cell *matCellDef="let item">{{ item.volunteer.name }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="walkDate">
+            <th mat-header-cell *matHeaderCellDef>{{ 'TABLE.WALK_DATE' | translate }}</th>
+            <td mat-cell *matCellDef="let item">{{ item.walkDate | date: 'dd/MM/yyyy' }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>{{ 'TABLE.WALK_STATUS' | translate }}</th>
+            <td mat-cell *matCellDef="let item">{{ getWalkStatus(item) | translate }}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="recentWalksColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: recentWalksColumns;"></tr>
+          </table>
+        </div>
+
+        <div class="mobile-card-list">
+          @for (item of recentWalks(); track item.id) {
+            <mat-card class="mobile-record-card">
+              <mat-card-content>
+                <div class="mobile-record-card__header">
+                  <div>
+                    <span class="mobile-record-card__eyebrow">{{ 'TABLE.ID' | translate }} {{ item.id }}</span>
+                    <h2>{{ item.elderly.name }}</h2>
+                    <p class="mobile-record-card__secondary">{{ item.volunteer.name }}</p>
+                  </div>
+                </div>
+                <dl class="mobile-record-card__details">
+                  <div><dt>{{ 'TABLE.WALK_DATE' | translate }}</dt><dd>{{ item.walkDate | date: 'dd/MM/yyyy' }}</dd></div>
+                  <div><dt>{{ 'TABLE.WALK_STATUS' | translate }}</dt><dd>{{ getWalkStatus(item) | translate }}</dd></div>
+                </dl>
+              </mat-card-content>
+            </mat-card>
+          }
+        </div>
+      }
+    </section>
+
+    <section class="dashboard-section">
+      <h2>{{ 'HOME.QUICK_ACCESS_TITLE' | translate }}</h2>
+      <div class="quick-actions">
+        <button mat-raised-button color="primary" routerLink="/elderlies/new">
+          <mat-icon>person_add</mat-icon>
+          {{ 'BUTTON.NEW_ELDERLY' | translate }}
+        </button>
+        <button mat-raised-button color="primary" routerLink="/volunteers/new">
+          <mat-icon>volunteer_activism</mat-icon>
+          {{ 'BUTTON.NEW_VOLUNTEER' | translate }}
+        </button>
+        <button mat-raised-button color="primary" routerLink="/walks">
+          <mat-icon>directions_walk</mat-icon>
+          {{ 'BUTTON.NEW_WALK' | translate }}
+        </button>
+      </div>
+    </section>
+  }
+</section>

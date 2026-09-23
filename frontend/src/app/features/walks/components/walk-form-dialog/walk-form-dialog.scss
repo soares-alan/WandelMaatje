@@ -1,0 +1,19 @@
+.walk-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: min(360px, 100%);
+}
+
+.walk-form-dialog__loading {
+  display: flex;
+  justify-content: center;
+  padding-block: 2rem;
+}
+
+@media (max-width: 599px) {
+  :host {
+    display: block;
+    max-width: 100%;
+  }
+}

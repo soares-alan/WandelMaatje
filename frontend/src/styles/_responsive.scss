@@ -1,0 +1,154 @@
+@use 'breakpoints' as bp;
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 20rem;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.75rem);
+  line-height: 1.3;
+}
+
+.mat-mdc-table {
+  white-space: nowrap;
+}
+
+.mobile-card-list,
+.mobile-fab {
+  display: none;
+}
+
+.responsive-dialog .mat-mdc-dialog-surface {
+  max-height: calc(100dvh - 2rem);
+}
+
+@include bp.mobile {
+  button[mat-button],
+  button[mat-raised-button],
+  button[mat-flat-button],
+  a[mat-button],
+  a[mat-raised-button],
+  a[mat-flat-button] {
+    min-height: 2.75rem;
+  }
+
+  button[mat-icon-button] {
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0.625rem;
+  }
+
+  .responsive-dialog {
+    width: calc(100vw - 2rem) !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+
+  .mat-mdc-dialog-content {
+    padding-inline: var(--space-3) !important;
+  }
+
+  .table-scroll {
+    display: none;
+  }
+
+  .mobile-card-list {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .mobile-record-card {
+    overflow: visible;
+  }
+
+  .mobile-record-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+
+  .mobile-record-card__header h2 {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .mobile-record-card__eyebrow,
+  .mobile-record-card__secondary {
+    color: var(--mat-sys-on-surface-variant);
+    font-size: 0.8125rem;
+  }
+
+  .mobile-record-card__secondary {
+    margin: var(--space-1) 0 0;
+  }
+
+  .mobile-record-card__actions {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .mobile-record-card__details {
+    display: grid;
+    gap: var(--space-2);
+    margin: var(--space-4) 0 0;
+  }
+
+  .mobile-record-card__details div {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+    border-top: 1px solid var(--mat-sys-outline-variant);
+    padding-top: var(--space-2);
+  }
+
+  .mobile-record-card__details dt {
+    color: var(--mat-sys-on-surface-variant);
+  }
+
+  .mobile-record-card__details dd {
+    margin: 0;
+    max-width: 60%;
+    overflow-wrap: anywhere;
+    text-align: end;
+  }
+
+  .elderly-list__header,
+  .volunteer-list__header,
+  .walk-list__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .elderly-list__header > button,
+  .volunteer-list__header > button,
+  .walk-list__header > button {
+    display: none;
+  }
+
+  .mobile-fab {
+    align-items: center;
+    bottom: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    position: fixed;
+    right: 1rem;
+    z-index: 10;
+  }
+}

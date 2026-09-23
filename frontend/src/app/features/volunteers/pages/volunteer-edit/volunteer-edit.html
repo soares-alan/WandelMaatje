@@ -1,0 +1,11 @@
+<section class="app-container volunteer-edit">
+  <h1>{{ 'VOLUNTEER.EDIT_TITLE' | translate }}</h1>
+
+  @if (loading()) {
+    <mat-progress-spinner mode="indeterminate" diameter="48" />
+  } @else if (errorMessage()) {
+    <p>{{ errorMessage() }}</p>
+  } @else {
+    <app-volunteer-form [initialValue]="volunteer()" [saving]="saving()" (formSubmit)="save($event)" />
+  }
+</section>

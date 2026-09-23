@@ -1,0 +1,13 @@
+<form class="volunteer-form" [formGroup]="form" (ngSubmit)="submit()">
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'FORM.VOLUNTEER_NAME' | translate }}</mat-label>
+    <input matInput formControlName="name" required appAutofocus autocomplete="name" />
+    <app-form-error [control]="form.controls.name" />
+  </mat-form-field>
+
+  <div class="volunteer-form__actions">
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || saving()">
+      {{ (saving() ? 'BUTTON.SAVING' : 'BUTTON.SAVE') | translate }}
+    </button>
+  </div>
+</form>

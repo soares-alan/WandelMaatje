@@ -1,0 +1,116 @@
+@use 'breakpoints' as bp;
+
+:root {
+  --container-max-width: 82.5rem;
+  --container-padding: var(--space-3);
+}
+
+.app-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding: var(--space-4) var(--container-padding);
+}
+
+.page-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.responsive-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+  width: min(100%, 43.75rem);
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.responsive-form__full,
+.responsive-form__actions {
+  grid-column: 1 / -1;
+}
+
+.responsive-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll > table {
+  width: 100%;
+  min-width: 40rem;
+}
+
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding-block: var(--space-6);
+  color: var(--mat-sys-on-surface-variant);
+  text-align: center;
+
+  mat-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 2.5rem;
+  }
+}
+
+@include bp.tablet {
+  :root {
+    --container-padding: var(--space-4);
+  }
+}
+
+@include bp.desktop-up {
+  :root {
+    --container-padding: var(--space-5);
+  }
+}
+
+@include bp.tablet-up {
+  .responsive-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include bp.mobile {
+  .page-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .page-header > button,
+  .responsive-form__actions > button {
+    width: 100%;
+  }
+
+  .responsive-form__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .table-scroll > table {
+    min-width: 37.5rem;
+  }
+}

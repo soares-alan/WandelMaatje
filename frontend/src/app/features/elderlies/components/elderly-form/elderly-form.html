@@ -1,0 +1,35 @@
+<form class="elderly-form" [formGroup]="form" (ngSubmit)="submit()">
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'FORM.ELDERLY_NAME' | translate }}</mat-label>
+    <input matInput formControlName="name" required appAutofocus autocomplete="name" />
+    <app-form-error [control]="form.controls.name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'FORM.ELDERLY_AGE' | translate }}</mat-label>
+    <input matInput type="number" formControlName="age" required min="60" max="120" />
+    <app-form-error [control]="form.controls.age" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'FORM.ELDERLY_MOBILITY_LEVEL' | translate }}</mat-label>
+    <mat-select formControlName="mobilityLevel" required>
+      @for (level of mobilityLevels; track level) {
+        <mat-option [value]="level">{{ mobilityLabelKey(level) | translate }}</mat-option>
+      }
+    </mat-select>
+    <app-form-error [control]="form.controls.mobilityLevel" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'FORM.ELDERLY_NOTES' | translate }}</mat-label>
+    <textarea matInput formControlName="notes" rows="3" maxlength="500"></textarea>
+    <app-form-error [control]="form.controls.notes" />
+  </mat-form-field>
+
+  <div class="elderly-form__actions">
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || saving()">
+      {{ (saving() ? 'BUTTON.SAVING' : 'BUTTON.SAVE') | translate }}
+    </button>
+  </div>
+</form>

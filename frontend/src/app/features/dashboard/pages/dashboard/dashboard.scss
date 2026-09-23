@@ -1,0 +1,96 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.summary-card {
+  border-inline-start: 4px solid transparent;
+
+  mat-card-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.summary-card--elderly {
+  border-inline-start-color: #1e88e5;
+}
+
+.summary-card--volunteer {
+  border-inline-start-color: #43a047;
+}
+
+.summary-card--walk {
+  border-inline-start-color: #fb8c00;
+}
+
+.summary-card__icon {
+  font-size: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.summary-card__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-card__count {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.summary-card__title {
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.dashboard-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.recent-walks-table {
+  width: 100%;
+}
+
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding-block: 3rem;
+  color: var(--mat-sys-on-surface-variant);
+
+  mat-icon {
+    font-size: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

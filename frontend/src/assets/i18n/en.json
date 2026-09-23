@@ -1,0 +1,142 @@
+{
+  "MENU": {
+    "HOME": "Home",
+    "ELDERLIES": "Elderlies",
+    "VOLUNTEERS": "Volunteers",
+    "WALKS": "Walks",
+    "LANGUAGE": "Language"
+  },
+  "COMMON": {
+    "LOADING": "Loading...",
+    "ID": "ID",
+    "ACTIONS": "Actions"
+  },
+  "HOME": {
+    "TITLE": "Dashboard",
+    "SUMMARY_ELDERLIES": "Elderlies",
+    "SUMMARY_VOLUNTEERS": "Volunteers",
+    "SUMMARY_WALKS": "Walks",
+    "RECENT_WALKS_TITLE": "Recent Walks",
+    "RECENT_WALKS_EMPTY": "No walks registered yet.",
+    "STATUS_DONE": "Completed",
+    "STATUS_SCHEDULED": "Scheduled",
+    "QUICK_ACCESS_TITLE": "Quick access",
+    "ERROR": "Unable to load the dashboard data. Please try again later."
+  },
+  "ELDERLY": {
+    "LIST_TITLE": "Registered Elderlies",
+    "LIST_EMPTY": "No elderly registered yet.",
+    "LIST_ERROR": "Unable to load the elderly list. Please try again later.",
+    "CREATE_TITLE": "New Elderly",
+    "EDIT_TITLE": "Edit Elderly",
+    "EDIT_LOAD_ERROR": "Unable to load the elderly data."
+  },
+  "VOLUNTEER": {
+    "LIST_TITLE": "Registered Volunteers",
+    "LIST_EMPTY": "No volunteers registered yet.",
+    "LIST_ERROR": "Unable to load the volunteer list. Please try again later.",
+    "CREATE_TITLE": "New Volunteer",
+    "EDIT_TITLE": "Edit Volunteer",
+    "EDIT_LOAD_ERROR": "Unable to load the volunteer data."
+  },
+  "WALK": {
+    "LIST_TITLE": "Walks",
+    "LIST_EMPTY": "No walks registered yet.",
+    "LIST_ERROR": "Unable to load the walk list. Please try again later.",
+    "DIALOG_CREATE_TITLE": "New Walk",
+    "DIALOG_EDIT_TITLE": "Edit Walk"
+  },
+  "FORM": {
+    "ELDERLY_NAME": "Name",
+    "ELDERLY_AGE": "Age",
+    "ELDERLY_MOBILITY_LEVEL": "Mobility level",
+    "ELDERLY_MOBILITY_LOW": "Low",
+    "ELDERLY_MOBILITY_MEDIUM": "Medium",
+    "ELDERLY_MOBILITY_HIGH": "High",
+    "ELDERLY_NOTES": "Notes",
+    "VOLUNTEER_NAME": "Name",
+    "WALK_ELDERLY": "Elderly",
+    "WALK_VOLUNTEER": "Volunteer",
+    "WALK_DATE": "Walk date",
+    "WALK_DURATION": "Duration (minutes)",
+    "WALK_DISTANCE": "Distance (km)",
+    "WALK_PAIN_MOOD": "Pain / mood",
+    "WALK_PAIN_MOOD_1": "1 - Very bad",
+    "WALK_PAIN_MOOD_2": "2 - Bad",
+    "WALK_PAIN_MOOD_3": "3 - Normal",
+    "WALK_PAIN_MOOD_4": "4 - Good",
+    "WALK_PAIN_MOOD_5": "5 - Very good",
+    "WALK_NOTES": "Notes"
+  },
+  "VALIDATION": {
+    "REQUIRED": "Required field",
+    "EMAIL": "Invalid email",
+    "MIN": "Minimum value not allowed",
+    "MAX": "Maximum value exceeded",
+    "MIN_LENGTH": "Minimum length of {{requiredLength}} characters not met",
+    "MAX_LENGTH": "Maximum length of {{requiredLength}} characters exceeded"
+  },
+  "errors": {
+    "badRequest": "Invalid data. Check the information provided.",
+    "unauthorized": "You are not authorized.",
+    "forbidden": "Access denied.",
+    "notFound": "Record not found.",
+    "conflict": "Data conflict.",
+    "serverError": "Internal server error.",
+    "connectionError": "Unable to connect to the server.",
+    "unexpected": "An unexpected error occurred."
+  },
+  "TABLE": {
+    "ID": "ID",
+    "ELDERLY_NAME": "Name",
+    "ELDERLY_AGE": "Age",
+    "ELDERLY_MOBILITY_LEVEL": "Mobility",
+    "ELDERLY_NOTES": "Notes",
+    "VOLUNTEER_NAME": "Name",
+    "WALK_ELDERLY": "Elderly",
+    "WALK_VOLUNTEER": "Volunteer",
+    "WALK_DATE": "Date",
+    "WALK_DURATION": "Duration",
+    "WALK_PAIN_MOOD": "Pain / mood",
+    "WALK_STATUS": "Status",
+    "ACTIONS": "Actions"
+  },
+  "BUTTON": {
+    "NEW_ELDERLY": "New Elderly",
+    "NEW_VOLUNTEER": "New Volunteer",
+    "NEW_WALK": "New Walk",
+    "SAVE": "Save",
+    "SAVING": "Saving...",
+    "CANCEL": "Cancel",
+    "DELETE": "Delete",
+    "EDIT": "Edit",
+    "TRY_AGAIN": "Try again"
+  },
+  "MESSAGE": {
+    "CLOSE": "Close",
+    "ELDERLY_DELETE_TITLE": "Delete elderly",
+    "ELDERLY_DELETE_CONFIRM": "Are you sure you want to delete \"{{name}}\"? This action cannot be undone.",
+    "ELDERLY_DELETE_SUCCESS": "Elderly deleted successfully.",
+    "ELDERLY_DELETE_ERROR": "Unable to delete the elderly.",
+    "ELDERLY_CREATE_SUCCESS": "Elderly registered successfully.",
+    "ELDERLY_CREATE_ERROR": "Unable to register the elderly.",
+    "ELDERLY_UPDATE_SUCCESS": "Elderly updated successfully.",
+    "ELDERLY_UPDATE_ERROR": "Unable to update the elderly.",
+    "VOLUNTEER_DELETE_TITLE": "Delete volunteer",
+    "VOLUNTEER_DELETE_CONFIRM": "Are you sure you want to delete \"{{name}}\"? This action cannot be undone.",
+    "VOLUNTEER_DELETE_SUCCESS": "Volunteer deleted successfully.",
+    "VOLUNTEER_DELETE_ERROR": "Unable to delete the volunteer.",
+    "VOLUNTEER_CREATE_SUCCESS": "Volunteer registered successfully.",
+    "VOLUNTEER_CREATE_ERROR": "Unable to register the volunteer.",
+    "VOLUNTEER_UPDATE_SUCCESS": "Volunteer updated successfully.",
+    "VOLUNTEER_UPDATE_ERROR": "Unable to update the volunteer.",
+    "WALK_DELETE_TITLE": "Delete walk",
+    "WALK_DELETE_CONFIRM": "Are you sure you want to delete the walk of \"{{elderly}}\" with \"{{volunteer}}\"? This action cannot be undone.",
+    "WALK_DELETE_SUCCESS": "Walk deleted successfully.",
+    "WALK_DELETE_ERROR": "Unable to delete the walk.",
+    "WALK_CREATE_SUCCESS": "Walk registered successfully.",
+    "WALK_CREATE_ERROR": "Unable to register the walk.",
+    "WALK_UPDATE_SUCCESS": "Walk updated successfully.",
+    "WALK_UPDATE_ERROR": "Unable to update the walk."
+  }
+}

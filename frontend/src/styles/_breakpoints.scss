@@ -1,0 +1,43 @@
+// Single source of truth for application breakpoints.
+$mobile-max: 599px;
+$tablet-min: 600px;
+$tablet-max: 959px;
+$desktop-min: 960px;
+$desktop-max: 1279px;
+$large-desktop-min: 1280px;
+
+@mixin mobile {
+  @media (max-width: $mobile-max) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-min) and (max-width: $desktop-max) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: $large-desktop-min) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: $tablet-min) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: $desktop-min) {
+    @content;
+  }
+}

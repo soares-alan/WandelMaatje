@@ -1,0 +1,4 @@
+<section class="app-container volunteer-create">
+  <h1>{{ 'VOLUNTEER.CREATE_TITLE' | translate }}</h1>
+  <app-volunteer-form [saving]="saving()" (formSubmit)="save($event)" />
+</section>
