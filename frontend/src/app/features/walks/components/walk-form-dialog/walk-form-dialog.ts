@@ -23,6 +23,7 @@ const PAIN_MOOD_OPTIONS: readonly { value: number; labelKey: string }[] = [
   { value: 5, labelKey: 'FORM.WALK_PAIN_MOOD_5' }
 ];
 
+
 @Component({
   selector: 'app-walk-form-dialog',
   imports: [ReactiveFormsModule, TranslatePipe, FormErrorComponent, AutofocusDirective, ...MATERIAL_IMPORTS],
@@ -57,6 +58,8 @@ export class WalkFormDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadOptions();
+      console.log('FORM VALID?', this.form.valid);
+  console.log('FORM ERRORS', this.form.errors);
   }
 
   private loadOptions(): void {
@@ -85,6 +88,9 @@ export class WalkFormDialogComponent implements OnInit {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
+      console.log(this.form.getRawValue());
+console.log(this.form.valid);
+console.log(this.form.controls);
     }
 
     const value = this.form.getRawValue();
@@ -107,4 +113,5 @@ export class WalkFormDialogComponent implements OnInit {
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
   }
+  
 }
