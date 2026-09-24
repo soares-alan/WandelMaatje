@@ -1,27 +1,15 @@
-import { Component, inject } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { TranslatePipe } from '@ngx-translate/core';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
-import { LanguageOption, LanguageService, SupportedLanguage } from './core/services/language.service';
-import { MATERIAL_IMPORTS } from './shared/material/material.imports';
+import { Navbar } from './shared/components/navbar/navbar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, TranslatePipe, ...MATERIAL_IMPORTS],
+  imports: [
+    RouterOutlet,
+    Navbar
+  ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
-  private readonly languageService = inject(LanguageService);
-
-  protected readonly title = 'WandelMaatje';
-  protected readonly languages: readonly LanguageOption[] = this.languageService.supportedLanguages;
-
-  protected get currentLanguage(): SupportedLanguage {
-    return this.languageService.currentLanguage;
-  }
-
-  protected changeLanguage(language: SupportedLanguage): void {
-    this.languageService.use(language);
-  }
-}
+export class App {}
