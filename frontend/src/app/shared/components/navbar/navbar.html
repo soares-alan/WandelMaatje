@@ -1,31 +1,101 @@
-<mat-toolbar color="primary">
-  <span>{{ title }}</span>
+<mat-toolbar color="primary" class="app-navbar">
+  <div class="app-navbar__container">
+    <div class="app-navbar__branding"></div>
+    <div class="app-navbar__logo">
+      <img
+        src="assets/images/icon_navbar.svg"
+        alt="WandelMaatje logo"
+        class="app-navbar__logo-image"
+      />
+    </div>
+
+    <div class="app-navbar__brand-text">
+      <span class="app-navbar__title"> WandelMaatje </span>
+
+      <span class="app-navbar__slogan"> Samen in beweging </span>
+    </div>
+  </div>
+
   <span class="app-toolbar__spacer"></span>
+
   <nav class="app-toolbar__navigation" aria-label="Primary navigation">
-    <button mat-button routerLink="/">{{ 'MENU.HOME' | translate }}</button>
-    <button mat-button routerLink="/elderlies">{{ 'MENU.ELDERLIES' | translate }}</button>
-    <button mat-button routerLink="/volunteers">{{ 'MENU.VOLUNTEERS' | translate }}</button>
-    <button mat-button routerLink="/walks">{{ 'MENU.WALKS' | translate }}</button>
+    <button
+      mat-button
+      routerLink="/"
+      routerLinkActive="app-nav-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      {{ 'MENU.HOME' | translate }}
+    </button>
+
+    <button mat-button routerLink="/elderlies" routerLinkActive="app-nav-active">
+      {{ 'MENU.ELDERLIES' | translate }}
+    </button>
+
+    <button mat-button routerLink="/volunteers" routerLinkActive="app-nav-active">
+      {{ 'MENU.VOLUNTEERS' | translate }}
+    </button>
+
+    <button mat-button routerLink="/walks" routerLinkActive="app-nav-active">
+      {{ 'MENU.WALKS' | translate }}
+    </button>
   </nav>
 
-  <button class="app-toolbar__mobile-menu" mat-icon-button [matMenuTriggerFor]="navigationMenu" aria-label="Open navigation">
+  <div class="app-navbar__actions">
+    <button
+      class="app-navbar__language"
+      mat-button
+      [matMenuTriggerFor]="languageMenu"
+      aria-label="Language selector"
+    >
+      <mat-icon>language</mat-icon>
+
+      {{ 'MENU.LANGUAGE' | translate }}
+    </button>
+
+    <div class="app-navbar__avatar">
+      <mat-icon>person</mat-icon>
+    </div>
+  </div>
+
+  <button
+    class="app-toolbar__mobile-menu"
+    mat-icon-button
+    [matMenuTriggerFor]="navigationMenu"
+    aria-label="Open navigation"
+  >
     <mat-icon>menu</mat-icon>
   </button>
+
   <mat-menu #navigationMenu="matMenu">
-    <button mat-menu-item routerLink="/">{{ 'MENU.HOME' | translate }}</button>
-    <button mat-menu-item routerLink="/elderlies">{{ 'MENU.ELDERLIES' | translate }}</button>
-    <button mat-menu-item routerLink="/volunteers">{{ 'MENU.VOLUNTEERS' | translate }}</button>
-    <button mat-menu-item routerLink="/walks">{{ 'MENU.WALKS' | translate }}</button>
+    <button mat-menu-item routerLink="/">
+      {{ 'MENU.HOME' | translate }}
+    </button>
+
+    <button mat-menu-item routerLink="/elderlies">
+      {{ 'MENU.ELDERLIES' | translate }}
+    </button>
+
+    <button mat-menu-item routerLink="/volunteers">
+      {{ 'MENU.VOLUNTEERS' | translate }}
+    </button>
+
+    <button mat-menu-item routerLink="/walks">
+      {{ 'MENU.WALKS' | translate }}
+    </button>
   </mat-menu>
 
-  <button mat-button [matMenuTriggerFor]="languageMenu" aria-label="Language selector">
-    <mat-icon>language</mat-icon>
-    {{ 'MENU.LANGUAGE' | translate }}
-  </button>
   <mat-menu #languageMenu="matMenu">
     @for (language of languages; track language.code) {
-      <button mat-menu-item (click)="changeLanguage(language.code)" [disabled]="language.code === currentLanguage">
-        <span>{{ language.flag }} {{ language.label }}</span>
+      <button
+        mat-menu-item
+        (click)="changeLanguage(language.code)"
+        [disabled]="language.code === currentLanguage"
+      >
+        <span>
+          {{ language.flag }}
+          {{ language.label }}
+        </span>
       </button>
     }
   </mat-menu>
