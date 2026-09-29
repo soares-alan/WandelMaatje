@@ -4,9 +4,11 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TranslatePipe } from '@ngx-translate/core';
 import { forkJoin } from 'rxjs';
 
-import { Elderly } from '../../../../core/models/elderly.model';
-import { Volunteer } from '../../../../core/models/volunteer.model';
-import { WalkRequest } from '../../../../core/models/walk.model';
+import {
+  Elderly,
+  Volunteer,
+  WalkRequest
+} from '../../../../shared/models';
 import { ElderlyService } from '../../../../core/services/elderly.service';
 import { VolunteerService } from '../../../../core/services/volunteer.service';
 import { FormErrorComponent } from '../../../../shared/components/form-error/form-error';
