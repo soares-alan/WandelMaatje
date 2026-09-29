@@ -5,8 +5,8 @@ import {
 } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
-import { MATERIAL_IMPORTS } from '../../material/material.imports';
-import { LanguageService } from '../../../core/services/language.service';
+import { MATERIAL_IMPORTS } from '../../shared/material/material.imports';
+import { LanguageService } from '../../core/services/language.service';
 
 @Component({
   selector: 'app-navbar',
