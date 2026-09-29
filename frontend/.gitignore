@@ -6,6 +6,10 @@ src/environments/*.local.ts
 # npm cache
 .npm-cache/
 
+# Folders
+📦features - pastas
+
+
 # Logs
 *.log
 
