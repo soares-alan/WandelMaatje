@@ -7,12 +7,9 @@
 }
 
 .app-nav-active {
-  background-color: #e2e8f0;
-
-  color: #0f4c81 !important;
-
+  background-color: var(--color-surface-hover);
+  color: var(--color-primary) !important;
   border-radius: 999px;
-
   font-weight: 600;
 }
 
@@ -31,11 +28,9 @@
 .app-navbar__logo {
   width: 64px;
   height: 64px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
 }
 
@@ -54,14 +49,14 @@
   font-weight: 700;
   font-size: 2rem;
   line-height: 1.1;
-  color: #1e293b;
+  color: var(--color-text-primary);
 }
 
 .app-navbar__slogan {
   font-size: 0.85rem;
   font-weight: 500;
   line-height: 1.2;
-  color: #64748b;
+  color: var(--color-text-muted);
   letter-spacing: 0.02em;
 }
 
@@ -73,22 +68,21 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  color: #334155;
+  color: var(--color-text-secondary);
   font-weight: 500;
   transition: all 0.2s ease;
 }
 
 .app-toolbar__navigation button {
-  color: #334155;
+  color: var(--color-text-secondary);
   font-weight: 500;
-
   transition:
     color 0.2s ease,
     background-color 0.2s ease;
 }
 
 .app-toolbar__navigation button:hover {
-  color: #0f4c81;
+  color: var(--color-primary);
 }
 
 .app-navbar__actions {
@@ -100,42 +94,30 @@
 .app-navbar__avatar {
   width: 42px;
   height: 42px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
-
-  background: #f1f5f9;
-
-  color: #334155;
-
+  background: var(--color-surface-alt);
+  color: var(--color-text-secondary);
   transition: all 0.2s ease;
-
   cursor: pointer;
 }
 .app-navbar__avatar:hover {
-  background: #e2e8f0;
+  background: var(--color-surface-hover);
 }
 
 .app-navbar__language {
   height: 40px;
-
   padding: 0 14px;
-
   border-radius: 999px;
-
-  background: #f8fafc;
-
-  color: #334155;
-
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
   font-weight: 500;
-
   transition: all 0.2s ease;
 }
 .app-navbar__language:hover {
-  background: #e2e8f0;
+  background: var(--color-surface-hover);
 }
 .app-toolbar__mobile-menu {
   display: none;
