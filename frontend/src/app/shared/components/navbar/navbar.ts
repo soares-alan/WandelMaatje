@@ -1,5 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import {
+  RouterLink,
+  RouterLinkActive
+} from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
 import { MATERIAL_IMPORTS } from '../../material/material.imports';
@@ -8,11 +11,12 @@ import { LanguageService } from '../../../core/services/language.service';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [
-    RouterLink,
-    TranslatePipe,
-    ...MATERIAL_IMPORTS
-  ],
+imports: [
+  RouterLink,
+  RouterLinkActive,
+  TranslatePipe,
+  ...MATERIAL_IMPORTS
+],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss'
 })

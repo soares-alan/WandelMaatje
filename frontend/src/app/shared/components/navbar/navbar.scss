@@ -1,3 +1,70 @@
+// Container for the entire navbar component
+.app-navbar {
+  min-height: 80px;
+
+  display: flex;
+  align-items: center;
+}
+
+.app-nav-active {
+  background-color: #e2e8f0;
+
+  color: #0f4c81 !important;
+
+  border-radius: 999px;
+
+  font-weight: 600;
+}
+
+.app-navbar__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.app-navbar__branding {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.app-navbar__logo {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.app-navbar__logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.app-navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-navbar__title {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.1;
+  color: #1e293b;
+}
+
+.app-navbar__slogan {
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #64748b;
+  letter-spacing: 0.02em;
+}
+
 .app-toolbar__spacer {
   flex: 1 1 auto;
 }
@@ -5,14 +72,82 @@
 .app-toolbar__navigation {
   display: flex;
   align-items: center;
+  gap: 24px;
+  color: #334155;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
+.app-toolbar__navigation button {
+  color: #334155;
+  font-weight: 500;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.app-toolbar__navigation button:hover {
+  color: #0f4c81;
+}
+
+.app-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.app-navbar__avatar {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f1f5f9;
+
+  color: #334155;
+
+  transition: all 0.2s ease;
+
+  cursor: pointer;
+}
+.app-navbar__avatar:hover {
+  background: #e2e8f0;
+}
+
+.app-navbar__language {
+  height: 40px;
+
+  padding: 0 14px;
+
+  border-radius: 999px;
+
+  background: #f8fafc;
+
+  color: #334155;
+
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+}
+.app-navbar__language:hover {
+  background: #e2e8f0;
+}
 .app-toolbar__mobile-menu {
   display: none;
 }
 
+// Responsive styles for mobile devices
 @media (max-width: 699px) {
   .app-toolbar__navigation {
+    display: none;
+  }
+
+  .app-navbar__actions {
     display: none;
   }
 
