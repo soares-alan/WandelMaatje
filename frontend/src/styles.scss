@@ -8,6 +8,7 @@
 @use 'styles/spacing';
 @use 'styles/layout';
 @use 'styles/responsive';
+@use 'styles/colors';
 
 html {
   @include mat.theme((
