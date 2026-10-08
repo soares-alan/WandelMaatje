@@ -124,6 +124,46 @@
 }
 
 // Responsive styles for mobile devices
+
+/* Tablet */
+@media (min-width: 700px) and (max-width: 1199px) {
+  .app-navbar__branding {
+    gap: 12px;
+  }
+
+  .app-navbar__logo-image {
+    width: 56px;
+    height: auto;
+  }
+
+  .app-navbar__title {
+    font-size: 2.75rem;
+  }
+
+  /* UI.04.01 */
+
+  .app-navbar__slogan {
+    display: none;
+  }
+
+  .app-toolbar__navigation {
+    display: none;
+  }
+
+  .app-navbar__avatar {
+    display: none;
+  }
+
+  .app-navbar__actions {
+    display: flex;
+  }
+
+  .app-toolbar__mobile-menu {
+    display: none;
+  }
+}
+
+/* Mobile */
 @media (max-width: 699px) {
   .app-toolbar__navigation {
     display: none;
