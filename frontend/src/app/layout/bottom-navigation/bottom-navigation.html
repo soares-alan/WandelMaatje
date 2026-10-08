@@ -1,0 +1,38 @@
+<nav class="bottom-navigation" aria-label="Bottom navigation">
+  <a
+    routerLink="/"
+    routerLinkActive="bottom-navigation__item--active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="bottom-navigation__item"
+  >
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </a>
+
+  <a
+    routerLink="/elderlies"
+    routerLinkActive="bottom-navigation__item--active"
+    class="bottom-navigation__item"
+  >
+    <mat-icon>elderly</mat-icon>
+    <span>Elderlies</span>
+  </a>
+
+  <a
+    routerLink="/volunteers"
+    routerLinkActive="bottom-navigation__item--active"
+    class="bottom-navigation__item"
+  >
+    <mat-icon>groups</mat-icon>
+    <span>Volunteers</span>
+  </a>
+
+  <a
+    routerLink="/walks"
+    routerLinkActive="bottom-navigation__item--active"
+    class="bottom-navigation__item"
+  >
+    <mat-icon>directions_walk</mat-icon>
+    <span>Walks</span>
+  </a>
+</nav>
